@@ -6,6 +6,8 @@
   --background-color-white: #f5f4fa;
   --grey-color: #757575;
   --white-color: #ffffff;
+  --icon-color: #afb1b8;
+  --secondary-color-trnsp: #ffffff99;
 }
 
 body {
@@ -31,6 +33,10 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.activities {
+  padding-bottom: 94px;
 }
 
 .activities-photos {
@@ -60,6 +66,12 @@ ul {
 .cards li {
   margin-left: 30px;
   margin-top: 30px;
+}
+
+.cards li:hover,
+.cards li:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cards figure figcaption {
@@ -112,7 +124,7 @@ ul {
 .company-address .tel-address a {
   text-decoration: none;
   margin-top: 9px;
-  color: #ffffff99;
+  color: var(--secondary-color-trnsp);
 }
 
 .company-address .mail-address a:hover,
@@ -130,8 +142,45 @@ ul {
   padding-right: 15px;
 }
 
+.client-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  fill: var(--icon-color);
+}
+
+.client-link:hover,
+.client-link:focus {
+  fill: var(--hover-color);
+  border: 1px solid var(--hover-color);
+}
+
+.clients h2 {
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.clients-links {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .features-list {
   display: flex;
+}
+
+.features-list li {
+  width: 270px;
+  align-items: baseline;
 }
 
 .features-list li:not(:last-child) {
@@ -145,6 +194,16 @@ ul {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+
+.feature-picture {
+  margin-bottom: 30px;
+  padding: 25px 0;
+  background-color: var(--background-color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
 }
 
 .filter {
@@ -180,6 +239,15 @@ ul {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
+.footer {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-social {
+  margin-left: 70px;
+}
+
 .footer-logo {
   color: var(--main-background);
   text-decoration: none;
@@ -187,6 +255,33 @@ ul {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-contact {
+  display: flex;
+  align-items: center;
+  color: var(--grey-color);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  fill: var(--grey-color);
+}
+
+.nav-contact:hover .nav-icon,
+.nav-contact:focus .nav-icon {
+  fill: var(--hover-color);
 }
 
 .nav-contacts {
@@ -242,14 +337,25 @@ a:focus {
 }
 
 .main-header {
+  max-width: 1600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
   padding-bottom: 200px;
   background-color: var(--background-color-dark);
   text-align: center;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main-header h1 {
-  color: var(--main-background);
+  color: var(--white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -258,7 +364,7 @@ a:focus {
 }
 
 .main-header button {
-  color: var(--main-background);
+  color: var(--white-color);
   background: var(--hover-color);
   margin-top: 30px;
   padding: 10px 32px;
@@ -277,6 +383,37 @@ a:focus {
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.link-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--icon-color);
+}
+
+.link-icon:hover,
+.link-icon:focus {
+  fill: var(--white-color);
+  background-color: var(--hover-color);
+}
+
+.link-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--white-color);
 }
 
 .location-address a {
@@ -358,4 +495,13 @@ a:focus {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+
+.uppercase-header {
+  margin-bottom: 0;
+  color: var(--white-color);
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
